@@ -1,0 +1,40 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Epic stadium lighting at night",
+      "imageUrl": "https://picsum.photos/seed/onecup-hero/1920/1080",
+      "imageHint": "sports stadium"
+    },
+    {
+      "id": "football-tournament",
+      "description": "Football match in action",
+      "imageUrl": "https://picsum.photos/seed/onecup-foot/800/600",
+      "imageHint": "soccer game"
+    },
+    {
+      "id": "gaming-tournament",
+      "description": "Pro gaming setup",
+      "imageUrl": "https://picsum.photos/seed/onecup-game/800/600",
+      "imageHint": "esports arena"
+    },
+    {
+      "id": "after-cup",
+      "description": "Concert party with lights",
+      "imageUrl": "https://picsum.photos/seed/onecup-after/800/600",
+      "imageHint": "music festival"
+    },
+    {
+      "id": "sponsor-tech",
+      "description": "Tech company logo placeholder",
+      "imageUrl": "https://picsum.photos/seed/onecup-tech/300/150",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "sponsor-energy",
+      "description": "Energy drink placeholder",
+      "imageUrl": "https://picsum.photos/seed/onecup-energy/300/150",
+      "imageHint": "beverage logo"
+    }
+  ]
+}

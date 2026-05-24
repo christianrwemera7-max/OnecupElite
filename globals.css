@@ -1,0 +1,83 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 228 24% 10%;
+    --card: 0 0% 98%;
+    --card-foreground: 228 24% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 228 24% 10%;
+    --primary: 227 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 199 100% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 228 24% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 227 100% 60%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 228 24% 8%;
+    --foreground: 210 20% 98%;
+    --card: 228 24% 10%;
+    --card-foreground: 210 20% 98%;
+    --popover: 228 24% 10%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 227 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 199 100% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 228 24% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 199 100% 40%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 228 24% 18%;
+    --input: 228 24% 18%;
+    --ring: 227 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline tracking-tight;
+  }
+}
+
+.glow-orange {
+  box-shadow: 0 10px 25px -5px rgba(255, 120, 0, 0.3);
+}
+
+.glow-blue {
+  box-shadow: 0 10px 25px -5px rgba(51, 85, 255, 0.4);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-full hover:bg-muted-foreground transition-colors;
+}

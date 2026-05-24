@@ -1,0 +1,115 @@
+
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Profil utilisateur étendu avec support téléphone",
+      "type": "object",
+      "properties": {
+        "username": { "type": "string" },
+        "email": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "displayName": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "bio": { "type": "string" },
+        "gameIDs": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["email", "phoneNumber", "createdAt"]
+    },
+    "Tournament": {
+      "title": "Tournament",
+      "description": "Détails d'un tournoi",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "gameType": { "type": "string" },
+        "startDate": { "type": "string", "format": "date-time" },
+        "endDate": { "type": "string", "format": "date-time" },
+        "registrationDeadline": { "type": "string", "format": "date-time" },
+        "organizerId": { "type": "string" },
+        "description": { "type": "string" },
+        "entryFee": { "type": "number" },
+        "maxTeams": { "type": "number" },
+        "teamsRegistered": { "type": "number" },
+        "imageUrl": { "type": "string" },
+        "locationStade": { "type": "string" },
+        "locationCommune": { "type": "string" },
+        "locationAdresse": { "type": "string" },
+        "teaserVideoUrl": { "type": "string" }
+      },
+      "required": ["name", "gameType", "startDate", "organizerId"]
+    },
+    "Team": {
+      "title": "Team",
+      "description": "Équipe de tournoi",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "captainId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "tagline": { "type": "string" },
+        "logoUrl": { "type": "string" }
+      },
+      "required": ["name", "captainId", "createdAt"]
+    },
+    "TournamentRegistration": {
+      "title": "Tournament Registration",
+      "description": "Inscription à un tournoi via numéro de téléphone",
+      "type": "object",
+      "properties": {
+        "tournamentId": { "type": "string" },
+        "tournamentName": { "type": "string" },
+        "teamName": { "type": "string" },
+        "captainName": { "type": "string" },
+        "contactPhone": { "type": "string" },
+        "userId": { "type": "string" },
+        "registrationDate": { "type": "string", "format": "date-time" },
+        "status": { "type": "string" }
+      },
+      "required": ["tournamentId", "teamName", "contactPhone", "registrationDate", "status"]
+    },
+    "Match": {
+      "title": "Match",
+      "description": "Rencontre entre deux équipes",
+      "type": "object",
+      "properties": {
+        "tournamentId": { "type": "string" },
+        "tournamentName": { "type": "string" },
+        "team1Id": { "type": "string" },
+        "team2Id": { "type": "string" },
+        "matchNumber": { "type": "number" },
+        "scheduledTime": { "type": "string", "format": "date-time" },
+        "status": { "type": "string" },
+        "scoreTeam1": { "type": "number" },
+        "scoreTeam2": { "type": "number" },
+        "winnerId": { "type": "string" },
+        "resultDetails": { "type": "string" }
+      },
+      "required": ["tournamentId", "team1Id", "team2Id", "scheduledTime", "status"]
+    },
+    "Sponsor": {
+      "title": "Sponsor",
+      "description": "Partenaire officiel de l'événement",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "logoUrl": { "type": "string" },
+        "websiteUrl": { "type": "string" },
+        "category": { "type": "string" }
+      },
+      "required": ["name", "logoUrl"]
+    }
+  },
+  "auth": {
+    "providers": ["google.com", "phone"]
+  },
+  "firestore": {
+    "/users/{userId}": { "schema": "User", "description": "Profils utilisateurs" },
+    "/tournaments/{tournamentId}": { "schema": "Tournament", "description": "Tournois" },
+    "/teams/{teamId}": { "schema": "Team", "description": "Équipes" },
+    "/registrations/{registrationId}": { "schema": "TournamentRegistration", "description": "Inscriptions" },
+    "/matches/{matchId}": { "schema": "Match", "description": "Matchs" },
+    "/sponsors/{sponsorId}": { "schema": "Sponsor", "description": "Partenaires" }
+  }
+}
